@@ -27,3 +27,4 @@ print(sales_plus_tax)
 add_tax = lambda x: x*1.2
 with_tax = list(add_tax(k) for k in sales_prices)
 print(with_tax)
+
