@@ -27,3 +27,13 @@ df = pd.DataFrame(rs.fetchall())
 conn.close()
 
 print(df.head())
+
+#Generating the same output using pandas read_sql_query
+df1 = pd.read_sql_query("SELECT * From Artist", engine)
+print(df1.head())
+
+#merged df to get the title and name of the artist
+
+df_merged = pd.read_sql_query('SELECT Album.Title, Artist.Name FROM Album INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId'
+        ,engine)
+print(df_merged.head())
