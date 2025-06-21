@@ -37,3 +37,8 @@ print(df1.head())
 df_merged = pd.read_sql_query('SELECT Album.Title, Artist.Name FROM Album INNER JOIN Artist ON Album.ArtistId = Artist.ArtistId'
         ,engine)
 print(df_merged.head())
+
+df_playlist = pd.read_sql_query('SELECT * FROM PlaylistTrack', engine)
+df_track = pd.read_sql_query('SELECT * FROM Track', engine)
+print(df_playlist.head())
+print(df_track.head())
